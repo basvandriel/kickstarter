@@ -1,3 +1,3 @@
-import './vendor'
+import 'scripts/vendor'
 
-console.log('hey');
+import 'styles/vendor.scss';
