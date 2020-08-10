@@ -1,23 +1,22 @@
 const path = require('path');
 
-exports.BUILD_PATH = '/build';
+const BUILD_PATH = path.resolve(__dirname, 'build');
 
 const entries = {
     common: './src/scripts/common.js',
 };
 
 const output = {
-    path: path.resolve(build_path),
+    path: BUILD_PATH,
     filename: '[hash:8].js', chunkFilename: '[chunkhash:8].js'
 };
 
 const aliases = {
-    styles: path.resolve(src_path, 'style/'),
-    scripts: path.resolve(src_path, 'scripts/')
+    styles: path.resolve(__dirname, 'src/', 'style/'),
+    scripts: path.resolve(__dirname, 'src/', 'scripts/')
 };
 
 module.exports = {
-    context: path.resolve(__dirname),
     entry: entries,
     output: output,
     resolve: { alias: aliases },
