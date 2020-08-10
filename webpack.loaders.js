@@ -4,23 +4,6 @@ module.exports = [
     {
         test: /\.html$/,
         loader: 'html-loader',
-        options: {
-            attributes: {
-                urlFilter: (attribute, value, resourcePath) => {
-                    console.log("Building stuff for: " + attribute);
-                    console.log(value);
-                    // The `attribute` argument contains a name of the HTML attribute.
-                    // The `value` argument contains a value of the HTML attribute.
-                    // The `resourcePath` argument contains a path to the loaded HTML file.
-
-                    if (/\.pdf$/.test(value)) {
-                        return true;
-                    }
-
-                    return true;
-                },
-            }
-        }
     },
     {
         test: /\.css$/i,
@@ -46,6 +29,7 @@ module.exports = [
         test: /\.pdf$/,
         use: {
             loader: 'file-loader',
+            query: { name: '[name].[ext]' }
         }
     },
     {

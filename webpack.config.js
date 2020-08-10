@@ -2,6 +2,9 @@ const path = require('path');
 
 const BUILD_PATH = path.resolve(__dirname, 'build');
 
+exports.src_path = path.resolve(__dirname, 'src');
+exports.build_path = BUILD_PATH;
+
 const entries = {
     common: './src/scripts/common.js',
 };
